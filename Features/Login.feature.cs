@@ -105,7 +105,7 @@ namespace ReqnrollProject2_Nunit.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/Login.feature.ndjson", 4);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/Login.feature.ndjson", 5);
         }
         
         [global::NUnit.Framework.TestAttribute()]
@@ -113,6 +113,7 @@ namespace ReqnrollProject2_Nunit.Features
         [global::NUnit.Framework.CategoryAttribute("Regressiontest")]
         [global::NUnit.Framework.TestCaseAttribute("user1", "pass1", "0", null)]
         [global::NUnit.Framework.TestCaseAttribute("user2", "pass2", "1", null)]
+        [global::NUnit.Framework.TestCaseAttribute("user3", "pass3", "2", null)]
         public async global::System.Threading.Tasks.Task TestLoginWithValidCredentials(string username, string password, string @__pickleIndex, string[] exampleTags)
         {
             string[] @__tags = new string[] {
