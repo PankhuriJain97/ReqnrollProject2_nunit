@@ -28,6 +28,7 @@ namespace ReqnrollProject_Nunit.StepDefinitions
         public void WhenIClickOnLogin()
         {
             Console.WriteLine("Clicked on login button");
+            Console.WriteLine("Performing login action");
         }
 
         [Then("I should be logged in successfully")]
