@@ -18,18 +18,18 @@ namespace ReqnrollProject2_Nunit.Features
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::NUnit.Framework.TestFixtureAttribute()]
-    [global::NUnit.Framework.DescriptionAttribute("Login")]
+    [global::NUnit.Framework.DescriptionAttribute("CreateUser")]
     [global::NUnit.Framework.FixtureLifeCycleAttribute(global::NUnit.Framework.LifeCycle.InstancePerTestCase)]
-    public partial class LoginFeature
+    public partial class CreateUserFeature
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Login", "Testing the login feature of an application", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "CreateUser", "To Test the Create new user functionality", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
-#line 1 "Login.feature"
+#line 1 "CreateUser.feature"
 #line hidden
         
         [global::NUnit.Framework.OneTimeSetUpAttribute()]
@@ -108,39 +108,28 @@ namespace ReqnrollProject2_Nunit.Features
 #line 5
 #line hidden
 #line 6
- await testRunner.GivenAsync("I am on the login page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("I navigate to http://eaapp.somee.com/", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
         }
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/Login.feature.ndjson", 6);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/CreateUser.feature.ndjson", 4);
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Test Login with valid credentials")]
+        [global::NUnit.Framework.DescriptionAttribute("Create a new user")]
         [global::NUnit.Framework.CategoryAttribute("Regressiontest")]
-        [global::NUnit.Framework.TestCaseAttribute("user1", "pass1", "0", null)]
-        [global::NUnit.Framework.TestCaseAttribute("user2", "pass2", "1", null)]
-        [global::NUnit.Framework.TestCaseAttribute("user3", "pass3", "2", null)]
-        [global::NUnit.Framework.TestCaseAttribute("user4", "pass4", "3", null)]
-        public async global::System.Threading.Tasks.Task TestLoginWithValidCredentials(string username, string password, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task CreateANewUser()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Regressiontest"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("username", username);
-            argumentsOfScenario.Add("password", password);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Test Login with valid credentials", "\t//Given I am on the login page", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string pickleIndex = "0";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Create a new user", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 10
+#line 9
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -153,17 +142,91 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 5
 await this.FeatureBackgroundAsync();
 #line hidden
-#line 12
- await testRunner.WhenAsync("I click on the logn link", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 10
+ await testRunner.WhenAsync("I click on the register link", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 13
- await testRunner.AndAsync(string.Format("I enter valid {0} and {1}", username, password), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
+                            "Username",
+                            "Email Address",
+                            "Password",
+                            "Confirm Password"});
+                table1.AddRow(new string[] {
+                            "user1",
+                            "user1@example.com",
+                            "pass1",
+                            "pass1"});
+                table1.AddRow(new string[] {
+                            "user2",
+                            "user2@example.com",
+                            "pass2",
+                            "pass2"});
+                table1.AddRow(new string[] {
+                            "user3",
+                            "user3@example.com",
+                            "pass3",
+                            "pass3"});
+#line 11
+ await testRunner.AndAsync("I enter user details as follows :", ((string)(null)), table1, "And ");
 #line hidden
-#line 14
- await testRunner.AndAsync("I click on login", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 17
+ await testRunner.AndAsync("I click on Create Account button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 15
- await testRunner.ThenAsync("I should be logged in successfully", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 18
+ await testRunner.ThenAsync("I should be registered successfully", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("Create a new user with dynamic data table")]
+        public async global::System.Threading.Tasks.Task CreateANewUserWithDynamicDataTable()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "1";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Create a new user with dynamic data table", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 21
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 22
+ await testRunner.WhenAsync("I click on the register link", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
+                            "Username",
+                            "Email Address",
+                            "Password",
+                            "Confirm Password"});
+                table2.AddRow(new string[] {
+                            "user1",
+                            "user1@example.com",
+                            "pass1",
+                            "pass1"});
+                table2.AddRow(new string[] {
+                            "user2",
+                            "user2@example.com",
+                            "pass2",
+                            "pass2"});
+#line 23
+ await testRunner.AndAsync("I enter user details with dynamic data table as follows :", ((string)(null)), table2, "And ");
+#line hidden
+#line 28
+ await testRunner.AndAsync("I click on Create Account button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 29
+ await testRunner.ThenAsync("I should be registered successfully", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

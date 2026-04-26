@@ -2,10 +2,13 @@
 
 Testing the login feature of an application
 
+Background: 
+	Given I am on the login page
+
 @Regressiontest
 
 Scenario: Test Login with valid credentials
-	Given I am on the login page
+	//Given I am on the login page
 	When I click on the logn link
 	And I enter valid <username> and <password>
 	And I click on login
