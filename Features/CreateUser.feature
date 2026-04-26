@@ -6,7 +6,7 @@ Background:
 	Given I navigate to http://eaapp.somee.com/
 
 @Regressiontest
-Scenario: Create a new user
+Scenario Outline: Create a new user
 	When I click on the register link
 	And I enter user details as follows :
 		| Username | Email Address	   | Password | Confirm Password |
@@ -18,7 +18,7 @@ Scenario: Create a new user
 	Then I should be registered successfully
 
 
-Scenario: Create a new user with dynamic data table
+Scenario Outline: Create a new user with dynamic data table
 	When I click on the register link
 	And I enter user details with dynamic data table as follows :
 		| Username | Email Address     | Password | Confirm Password |
